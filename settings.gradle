@@ -1,0 +1,8 @@
+rootProject.name = "MNCompont"
+include ':app'
+include ':login'
+include ':merber'
+include ':common'
+include ':annotation'
+include ':annotation_compiler'
+include ':arouter'

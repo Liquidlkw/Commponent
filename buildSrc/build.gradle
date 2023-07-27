@@ -1,0 +1,32 @@
+apply plugin: 'groovy'
+//固定写法
+repositories {
+    google()
+    mavenCentral()
+    jcenter()
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.tools.build:gradle:4.2.1"
+    implementation localGroovy() //groovy sdk
+    implementation gradleApi()
+
+    implementation 'org.javassist:javassist:3.20.0-GA'
+
+    //核心库
+    implementation 'org.ow2.asm:asm:9.3'
+    //辅助库
+    implementation 'org.ow2.asm:asm-commons:9.3'
+
+
+//    testImplementation 'org.ow2.asm:asm:7.1'
+//    testImplementation 'org.ow2.asm:asm-commons:7.1'
+
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
